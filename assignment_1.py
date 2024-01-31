@@ -2,11 +2,12 @@ from github import Github
 import sys
 
 def print_commit_info(branch):
+    first_commit = branch.commit
     print(f"Branch Name: {branch.name}")
-    print(f"Commit ID (SHA): {branch.commit.sha}")
-    print(f"Commit Author Name: {branch.commit.author.name}")
-    print(f"Commit Date: {branch.commit.author.date}")
-    print(f"Commit Message: {branch.commit.message}")
+    print(f"Commit ID (SHA): {first_commit.sha}")
+    print(f"Commit Author Name: {first_commit.commit.author.name}")
+    print(f"Commit Date: {first_commit.commit.author.date}")
+    print(f"Commit Message: {first_commit.commit.message}")
     print("-" * 50)
 
 def main():
