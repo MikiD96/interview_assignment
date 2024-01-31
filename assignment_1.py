@@ -19,7 +19,13 @@ def main():
 
     git = Github()
     repo = git.get_repo(f"{repo_owner}/{repo_name}")
+    if repo is None:
+        print("Error:unable to access the repository, please check your parameters")
+
     branch = repo.get_branch(branch_name)
+    if branch is None:
+        print("Error:unable to access the branch, please check branch name")
+        
     all_commits = repo.get_commits(sha=branch.commit.sha)
     
     #commits works as a queue, latest is at index 0 
