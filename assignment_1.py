@@ -20,10 +20,10 @@ def main():
     git = Github()
     repo = git.get_repo(f"{repo_owner}/{repo_name}")
     branch = repo.get_branch(branch_name)
-    allCommits = repo.get_commits(sha=branch.commit.sha)
+    all_commits = repo.get_commits(sha=branch.commit.sha)
     
     #commits works as a queue, latest is at index 0 
-    for commit in allCommits[:5]:
+    for commit in all_commits[:5]:
         print_commit_info(commit)
 
 if __name__ == "__main__":
