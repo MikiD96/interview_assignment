@@ -26,5 +26,6 @@ def main():
     for commit in all_commits[:5]:
         print_commit_info(commit)
 
+
 if __name__ == "__main__":
     main()
